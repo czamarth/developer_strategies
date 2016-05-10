@@ -1,12 +1,14 @@
-from flask import Flask, jsonify
-from strategy import Strategy
 import os
+
+from flask import Flask, jsonify
+
+from strategy import Strategy
 
 dirpath = os.path.dirname(__file__)
 devpath = os.path.join(dirpath, 'developer_strategies.txt')
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 strategy = Strategy(devpath)
 
 
